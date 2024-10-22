@@ -42,7 +42,7 @@ app.post('/create-payment-session', async (req, res) => {
         const paymentIntent = await stripe.paymentIntents.create({
             amount: amount,
             currency: 'usd',
-            payment_method_types: ['card', 'cashapp'],
+            payment_method_types: ['card', 'google_pay'],
             metadata: { title, description, image },
         });
 
