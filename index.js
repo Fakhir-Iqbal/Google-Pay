@@ -51,10 +51,7 @@ app.post('/create-payment-session', async (req, res) => {
 
 
 
-        let response = {}
-
-        response.isEmailSent = isEmailSent
-        response.redirect = uniqueUrl
+      
 
 
         sessions[sessionId] = {
@@ -64,7 +61,7 @@ app.post('/create-payment-session', async (req, res) => {
         };
 
 
-        res.status(200).json({ message: "success", status: 200, response, url: uniqueUrl });
+        res.status(200).json({ message: "success", status: 200, url: uniqueUrl });
 
     } catch (error) {
         console.error('Error creating payment session:', error.message);
