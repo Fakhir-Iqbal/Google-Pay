@@ -49,7 +49,6 @@ app.post('/create-payment-session', async (req, res) => {
         const sessionId = paymentIntent.id;
         const uniqueUrl = `http://localhost:5173/payment/${sessionId}`;
 
-        const isEmailSent = paymentIntent.id && await sendEmail({ customerEmail: agentEmail, customerName: agentName, message: description }) // here should be that email sent what wanna recieve an email from company.
 
 
         let response = {}
